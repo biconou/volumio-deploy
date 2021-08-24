@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+
+  volumio:
+    restart: unless-stopped
+    build:
+      context: volumio/
+      dockerfile: Dockerfile.${HOSTNAME}
+    environment: 
+      - HOST=${HOST}
+    volumes:
+      - ${MUSIC_DIR}:/var/lib/mpd/music:ro
+      - /mnt/DATA/volumio-data:/data
+    ports:
+      - "3000:3000"
+    devices: 
+      - /dev/snd
