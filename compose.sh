@@ -4,6 +4,6 @@ export HOSTNAME=`hostname`
 
 docker-compose down -v
 
-docker-compose --env-file .env.${HOSTNAME} up -d --build
+docker-compose --env-file .env.${HOSTNAME} up  --build
 
-unzip -n plugins/soundcloud.zip -d /mnt/DATA/volumio-data/plugins/music_service/
+#unzip -n plugins/soundcloud.zip -d /mnt/DATA/volumio-data/plugins/music_service/
